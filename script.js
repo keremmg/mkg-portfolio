@@ -1,7 +1,6 @@
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
 
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -10,11 +9,9 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 
-
 const nameString = "MUSTAFA KEREM GÜÇLÜ ";
 
-
-const fontSize = 24; 
+const fontSize = 24;
 const columns = canvas.width / fontSize;
 
 const drops = [];
@@ -23,10 +20,12 @@ for (let x = 0; x < columns; x++) {
 }
 
 function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.08)"; 
+    ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#0F0"; 
-    ctx.font = "bold " + fontSize + "px monospace"; 
+
+    ctx.fillStyle = "#0F0";
+    ctx.font = "bold " + fontSize + "px monospace";
+
     ctx.shadowBlur = 8;
     ctx.shadowColor = "#0f0";
 
@@ -45,8 +44,7 @@ function drawMatrix() {
     ctx.shadowBlur = 0;
 }
 
-setInterval(drawMatrix, 50); 
-
+setInterval(drawMatrix, 50);
 
 const contactForm = document.getElementById('contactForm');
 const feedback = document.getElementById('formFeedback');
@@ -58,12 +56,14 @@ if (contactForm) {
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (name === "" || email === "" || message === "") {
             feedback.style.color = "red";
             feedback.textContent = "HATA: Lütfen tüm alanları doldurun!";
-        } else if (!email.includes('@')) {
+        } else if (!emailPattern.test(email)) {
             feedback.style.color = "red";
-            feedback.textContent = "HATA: Geçersiz e-posta formatı!";
+            feedback.textContent = "HATA: Geçersiz e-posta adresi! (örnek: isim@site.com)";
         } else {
             feedback.style.color = "#0f0";
             feedback.textContent = "BAŞARILI: Mesajınız şifrelendi ve iletildi.";
@@ -71,4 +71,3 @@ if (contactForm) {
         }
     });
 }
-
