@@ -1,4 +1,3 @@
-/* --- 1. GENEL AYARLAR --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +7,11 @@
 body {
     background-color: #000;
     font-family: 'Courier New', Courier, monospace;
-    /* Siber güvenlik hissi */
     color: #0f0;
-    /* Neon Yeşil */
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Matrix Arka Plan */
 #matrix {
     position: fixed;
     top: 0;
@@ -26,7 +22,7 @@ body {
     opacity: 0.15;
 }
 
-/* --- 2. HEADER VE MENÜ --- */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -39,31 +35,23 @@ header {
     z-index: 1000;
 }
 
-/* --- YENİ LOGO AYARLARI (Eskisinin yerine bunu yapıştır) --- */
 
-/* 1. Kapsayıcı (Logo + Yazı) */
+
 .logo {
     display: flex;
-    /* Resim ve yazıyı yan yana koy */
     align-items: center;
-    /* Dikey olarak ortala */
     gap: 10px;
-    /* Resim ile yazı arasında boşluk bırak */
     text-decoration: none;
-    /* Link alt çizgisini kaldır */
 }
 
-/* 2. Logo Resmi (Senin favicon.png) */
 .logo img {
     width: 45px;
-    /* Resmin genişliği */
     height: auto;
-    /* Yüksekliği otomatik ayarla */
     filter: drop-shadow(0 0 5px #0f0);
-    /* Resme de neon parlama ver */
+
 }
 
-/* 3. Logo Yazısı (MKG-PORTFOLYO) */
+
 .logo span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -93,49 +81,43 @@ nav ul li a.active {
     text-shadow: 0 0 8px #0f0;
 }
 
-/* --- 3. ANA KAPLAYICI --- */
+
 .container {
     padding: 40px 10%;
     min-height: 80vh;
 }
 
-/* --- 4. HERO BÖLÜMÜ (YAN YANA DURMA GARANTİSİ) --- */
+
 .hero-wrapper {
     display: flex;
-    /* Esnek kutu modeli */
     flex-direction: row;
-    /* Yan yana diz */
     align-items: center;
-    /* Dikeyde ortala */
     justify-content: space-between;
     gap: 15px;
-    /* Aradaki boşluk */
     width: 100%;
     margin-top: 40px;
     margin-bottom: 50px;
     flex-wrap: nowrap;
-    /* KRİTİK: Masaüstünde asla alt satıra geçme */
+
 }
 
-/* Sol ve Sağ Kutular */
+
 .hero-left,
 .hero-right {
     flex: 1;
-    /* Eşit alan kapla */
     min-width: 280px;
-    /* Çok küçülmeye izin verme */
+
 }
 
-/* Orta Kısım */
+
 .hero-center {
     flex: 1.2;
-    /* Ortası biraz daha geniş */
     text-align: center;
     padding: 0 15px;
     min-width: 300px;
 }
 
-/* İsim Tasarımı */
+
 .glitch-name {
     font-size: 3.5rem;
     line-height: 1.1;
@@ -154,10 +136,10 @@ nav ul li a.active {
     display: inline-block;
     padding: 5px 15px;
     white-space: nowrap;
-    /* Asla alt satıra geçme */
+
 }
 
-/* Butonlar */
+
 .hero-buttons {
     display: flex;
     gap: 15px;
@@ -202,7 +184,7 @@ nav ul li a.active {
     box-shadow: 0 0 15px #fff;
 }
 
-/* --- 5. PENCERE VE KOD TASARIMI --- */
+
 .code-window {
     background: rgba(5, 10, 5, 0.9);
     border: 1px solid #0f0;
@@ -252,18 +234,17 @@ nav ul li a.active {
     background: #27c93f;
 }
 
-/* style.css içinde bu kısmı bul ve değiştir */
+
 .window-body {
     padding: 15px 10px;
-    /* Kenar boşluklarını azalttık ki yazıya yer kalsın */
     font-size: 0.9rem;
     color: #ccc;
     text-align: left;
     overflow-x: hidden;
-    /* Taşmayı engelle */
+
 }
 
-/* Terminal Stilleri */
+
 .prompt {
     color: #0f0;
     margin-right: 5px;
@@ -293,20 +274,15 @@ nav ul li a.active {
     }
 }
 
-/* Sağdaki Kod Listeleri İçin Ayar */
-/* style.css içinde bu kısmı bul ve değiştir */
 .code-text p {
     margin-bottom: 5px;
     line-height: 1.4;
     white-space: nowrap;
-    /* TEKRAR YAN YANA ZORLA */
     font-size: 0.8rem;
-    /* Yazıyı biraz küçülttük ki sığsın */
     letter-spacing: -0.5px;
-    /* Harfleri çok hafif sıkıştırdık */
 }
 
-/* Kod Renkleri */
+
 .kwd {
     color: #d7ba7d;
 }
@@ -319,7 +295,6 @@ nav ul li a.active {
     color: #ce9178;
 }
 
-/* --- 6. DİĞER BÖLÜMLER (CV, Projeler vb.) --- */
 .content-box,
 .project-card,
 .cv-section {
@@ -358,7 +333,7 @@ h3 {
     font-size: 0.9rem;
 }
 
-/* Form */
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -387,21 +362,16 @@ footer {
     color: #555;
 }
 
-/* --- 7. RESPONSIVE (MOBİL) --- */
-/* Burası en altta olmalı ve diğer parantezlerin dışında olmalı */
-/* --- 7. RESPONSIVE (MOBİL DÜZELTMESİ) --- */
-/* Bu kodu style.css'in en altına yapıştır (Eski media kodunu sil) */
 
 @media (max-width: 950px) {
 
-    /* Header Ayarları */
+
     header {
         flex-direction: column;
         padding: 10px;
         position: relative;
-        /* Mobilde yapışkan olmasın, içeriği ezmesin */
         height: auto;
-        /* İçeriğe göre uzasın */
+
     }
 
     .logo {
@@ -416,71 +386,61 @@ footer {
         width: 100%;
         padding: 0;
         gap: 0;
-        /* Linkler arası ekstra boşluğu sıfırla */
+
     }
 
     nav ul li {
         margin: 5px 0;
-        /* Linklerin arasını aç */
         width: 100%;
         padding: 8px;
         border-bottom: 1px solid rgba(0, 255, 0, 0.1);
-        /* Hafif çizgi ile ayır */
+
     }
 
-    /* Konteyner Ayarı */
+
     .container {
         padding: 20px 5%;
-        /* Kenar boşluklarını azalttık */
         margin-top: 0;
     }
 
-    /* Hero Bölümü (Kutular) */
+
     .hero-wrapper {
         flex-direction: column;
-        /* Alt alta diz */
         align-items: center;
         gap: 40px;
-        /* Kutular birbirine yapışmasın */
         margin-top: 10px;
         width: 100%;
     }
 
-    /* Sol, Orta, Sağ Parçalar */
+
     .hero-left,
     .hero-center,
     .hero-right {
         width: 100%;
-        /* Tam genişlik */
         min-width: auto;
-        /* Genişlik zorlamasını kaldır */
         padding: 0;
     }
 
-    /* İsim Kısmı (En Üste) */
+
     .hero-center {
         order: -1;
-        /* İsmi en başa al */
         margin-bottom: 10px;
     }
 
-    /* İsmin Fontunu Küçült */
+
     .glitch-name {
         font-size: 2.2rem;
-        /* Telefonta sığacak boyut */
         word-wrap: break-word;
-        /* Taşarsa alt satıra geç */
     }
 
     .subtitle {
         font-size: 1rem;
         white-space: normal;
-        /* Mobilde alt satıra geçmesine izin ver */
         display: inline-block;
         margin-top: 10px;
     }
 
-    /* Butonlar mobilde alt alta olsun */
+
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
@@ -490,24 +450,21 @@ footer {
     .btn,
     .btn-outline {
         width: 100%;
-        /* Butonlar tam genişlik olsun */
         display: block;
         text-align: center;
     }
 
-    /* Terminal ve Kod Pencereleri */
+
     .code-window {
         width: 100%;
-        /* Ekrana tam otursun */
         margin: 0 auto;
     }
 
-    /* Sağdaki kod yazıları mobilde taşmasın */
+
     .code-text p {
         font-size: 0.75rem;
-        /* Kod yazılarını biraz daha küçült */
         white-space: normal;
-        /* Mobilde gerekirse alt satıra geçsin */
         word-break: break-all;
     }
 }
+
