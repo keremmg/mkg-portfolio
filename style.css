@@ -1,0 +1,405 @@
+/* --- 1. GENEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    /* Siber güvenlik hissi */
+    color: #0f0;
+    /* Neon Yeşil */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Matrix Arka Plan */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+}
+
+/* --- 2. HEADER VE MENÜ --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #0f0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #0f0;
+    text-shadow: 0 0 8px #0f0;
+}
+
+/* --- 3. ANA KAPLAYICI --- */
+.container {
+    padding: 40px 10%;
+    min-height: 80vh;
+}
+
+/* --- 4. HERO BÖLÜMÜ (YAN YANA DURMA GARANTİSİ) --- */
+.hero-wrapper {
+    display: flex;
+    /* Esnek kutu modeli */
+    flex-direction: row;
+    /* Yan yana diz */
+    align-items: center;
+    /* Dikeyde ortala */
+    justify-content: space-between;
+    gap: 15px;
+    /* Aradaki boşluk */
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+    /* KRİTİK: Masaüstünde asla alt satıra geçme */
+}
+
+/* Sol ve Sağ Kutular */
+.hero-left,
+.hero-right {
+    flex: 1;
+    /* Eşit alan kapla */
+    min-width: 280px;
+    /* Çok küçülmeye izin verme */
+}
+
+/* Orta Kısım */
+.hero-center {
+    flex: 1.2;
+    /* Ortası biraz daha geniş */
+    text-align: center;
+    padding: 0 15px;
+    min-width: 300px;
+}
+
+/* İsim Tasarımı */
+.glitch-name {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 3px 3px 0px rgba(0, 255, 0, 0.5);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #0f0;
+    margin-bottom: 30px;
+    font-family: monospace;
+    background: rgba(0, 255, 0, 0.1);
+    display: inline-block;
+    padding: 5px 15px;
+    white-space: nowrap;
+    /* Asla alt satıra geçme */
+}
+
+/* Butonlar */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn,
+.btn-small {
+    display: inline-block;
+    background: #000;
+    color: #0f0;
+    padding: 10px 20px;
+    border: 1px solid #0f0;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.btn-small:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px #fff;
+}
+
+/* --- 5. PENCERE VE KOD TASARIMI --- */
+.code-window {
+    background: rgba(5, 10, 5, 0.9);
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    transition: transform 0.3s;
+}
+
+.code-window:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+}
+
+.window-header {
+    background: #111;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #333;
+    align-items: center;
+}
+
+.title {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+/* style.css içinde bu kısmı bul ve değiştir */
+.window-body {
+    padding: 15px 10px;
+    /* Kenar boşluklarını azalttık ki yazıya yer kalsın */
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: left;
+    overflow-x: hidden;
+    /* Taşmayı engelle */
+}
+
+/* Terminal Stilleri */
+.prompt {
+    color: #0f0;
+    margin-right: 5px;
+}
+
+.output {
+    color: #fff;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.cursor-blink {
+    animation: blink 1s infinite;
+    font-weight: bold;
+    color: #0f0;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Sağdaki Kod Listeleri İçin Ayar */
+/* style.css içinde bu kısmı bul ve değiştir */
+.code-text p {
+    margin-bottom: 5px;
+    line-height: 1.4;
+    white-space: nowrap;
+    /* TEKRAR YAN YANA ZORLA */
+    font-size: 0.8rem;
+    /* Yazıyı biraz küçülttük ki sığsın */
+    letter-spacing: -0.5px;
+    /* Harfleri çok hafif sıkıştırdık */
+}
+
+/* Kod Renkleri */
+.kwd {
+    color: #d7ba7d;
+}
+
+.var {
+    color: #4ec9b0;
+}
+
+.str {
+    color: #ce9178;
+}
+
+/* --- 6. DİĞER BÖLÜMLER (CV, Projeler vb.) --- */
+.content-box,
+.project-card,
+.cv-section {
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid #0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    border-radius: 5px;
+}
+
+h1,
+h2,
+h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.highlight {
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skills span {
+    display: inline-block;
+    border: 1px solid #0f0;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    border: 1px solid #0f0;
+    color: #0f0;
+    font-family: inherit;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* --- 7. RESPONSIVE (MOBİL) --- */
+/* Burası en altta olmalı ve diğer parantezlerin dışında olmalı */
+@media (max-width: 950px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Mobilde Hero Bölümü Alt Alta Geçsin */
+    .hero-wrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+        /* Mobilde sarmaya izin ver */
+        gap: 30px;
+    }
+
+    .hero-left,
+    .hero-center,
+    .hero-right {
+        width: 100%;
+        /* Tam genişlik */
+    }
+
+    .hero-center {
+        order: -1;
+        /* İsim en üste çıksın */
+    }
+
+    .glitch-name {
+        font-size: 2.5rem;
+    }
+}
