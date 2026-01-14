@@ -39,9 +39,35 @@ header {
     z-index: 1000;
 }
 
+/* --- YENİ LOGO AYARLARI (Eskisinin yerine bunu yapıştır) --- */
+
+/* 1. Kapsayıcı (Logo + Yazı) */
 .logo {
+    display: flex;
+    /* Resim ve yazıyı yan yana koy */
+    align-items: center;
+    /* Dikey olarak ortala */
+    gap: 10px;
+    /* Resim ile yazı arasında boşluk bırak */
+    text-decoration: none;
+    /* Link alt çizgisini kaldır */
+}
+
+/* 2. Logo Resmi (Senin favicon.png) */
+.logo img {
+    width: 45px;
+    /* Resmin genişliği */
+    height: auto;
+    /* Yüksekliği otomatik ayarla */
+    filter: drop-shadow(0 0 5px #0f0);
+    /* Resme de neon parlama ver */
+}
+
+/* 3. Logo Yazısı (MKG-PORTFOLYO) */
+.logo span {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #0f0;
     text-shadow: 0 0 10px #0f0;
 }
 
@@ -367,12 +393,15 @@ footer {
 /* Bu kodu style.css'in en altına yapıştır (Eski media kodunu sil) */
 
 @media (max-width: 950px) {
+
     /* Header Ayarları */
     header {
         flex-direction: column;
         padding: 10px;
-        position: relative; /* Mobilde yapışkan olmasın, içeriği ezmesin */
-        height: auto; /* İçeriğe göre uzasın */
+        position: relative;
+        /* Mobilde yapışkan olmasın, içeriği ezmesin */
+        height: auto;
+        /* İçeriğe göre uzasın */
     }
 
     .logo {
@@ -386,53 +415,67 @@ footer {
         text-align: center;
         width: 100%;
         padding: 0;
-        gap: 0; /* Linkler arası ekstra boşluğu sıfırla */
+        gap: 0;
+        /* Linkler arası ekstra boşluğu sıfırla */
     }
 
     nav ul li {
-        margin: 5px 0; /* Linklerin arasını aç */
+        margin: 5px 0;
+        /* Linklerin arasını aç */
         width: 100%;
         padding: 8px;
-        border-bottom: 1px solid rgba(0, 255, 0, 0.1); /* Hafif çizgi ile ayır */
+        border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+        /* Hafif çizgi ile ayır */
     }
-    
+
     /* Konteyner Ayarı */
     .container {
-        padding: 20px 5%; /* Kenar boşluklarını azalttık */
+        padding: 20px 5%;
+        /* Kenar boşluklarını azalttık */
         margin-top: 0;
     }
 
     /* Hero Bölümü (Kutular) */
     .hero-wrapper {
-        flex-direction: column; /* Alt alta diz */
+        flex-direction: column;
+        /* Alt alta diz */
         align-items: center;
-        gap: 40px; /* Kutular birbirine yapışmasın */
+        gap: 40px;
+        /* Kutular birbirine yapışmasın */
         margin-top: 10px;
         width: 100%;
     }
 
     /* Sol, Orta, Sağ Parçalar */
-    .hero-left, .hero-center, .hero-right {
-        width: 100%; /* Tam genişlik */
-        min-width: auto; /* Genişlik zorlamasını kaldır */
+    .hero-left,
+    .hero-center,
+    .hero-right {
+        width: 100%;
+        /* Tam genişlik */
+        min-width: auto;
+        /* Genişlik zorlamasını kaldır */
         padding: 0;
     }
 
     /* İsim Kısmı (En Üste) */
     .hero-center {
-        order: -1; /* İsmi en başa al */
+        order: -1;
+        /* İsmi en başa al */
         margin-bottom: 10px;
     }
-    
+
     /* İsmin Fontunu Küçült */
     .glitch-name {
-        font-size: 2.2rem; /* Telefonta sığacak boyut */
-        word-wrap: break-word; /* Taşarsa alt satıra geç */
+        font-size: 2.2rem;
+        /* Telefonta sığacak boyut */
+        word-wrap: break-word;
+        /* Taşarsa alt satıra geç */
     }
-    
+
     .subtitle {
         font-size: 1rem;
-        white-space: normal; /* Mobilde alt satıra geçmesine izin ver */
+        white-space: normal;
+        /* Mobilde alt satıra geçmesine izin ver */
         display: inline-block;
         margin-top: 10px;
     }
@@ -443,23 +486,28 @@ footer {
         gap: 10px;
         width: 100%;
     }
-    
-    .btn, .btn-outline {
-        width: 100%; /* Butonlar tam genişlik olsun */
+
+    .btn,
+    .btn-outline {
+        width: 100%;
+        /* Butonlar tam genişlik olsun */
         display: block;
         text-align: center;
     }
 
     /* Terminal ve Kod Pencereleri */
     .code-window {
-        width: 100%; /* Ekrana tam otursun */
+        width: 100%;
+        /* Ekrana tam otursun */
         margin: 0 auto;
     }
-    
+
     /* Sağdaki kod yazıları mobilde taşmasın */
     .code-text p {
-        font-size: 0.75rem; /* Kod yazılarını biraz daha küçült */
-        white-space: normal; /* Mobilde gerekirse alt satıra geçsin */
+        font-size: 0.75rem;
+        /* Kod yazılarını biraz daha küçült */
+        white-space: normal;
+        /* Mobilde gerekirse alt satıra geçsin */
         word-break: break-all;
     }
 }
